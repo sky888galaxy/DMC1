@@ -1,0 +1,181 @@
+﻿/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(145deg, #131313, #2a2a2a);
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+/* 容器样式 */
+.container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* 标题样式 */
+h1 {
+    font-size: 20px;
+    color: #00ff00;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+/* 结果框样式 */
+.result {
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #222;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+    word-wrap: break-word; /* 确保长文本不会溢出 */
+    white-space: normal; /* 允许正常换行 */
+    display: block; /* 确保每个元素占一行 */
+}
+
+/* 滑动开关样式 */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 10px auto;
+}
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        border-radius: 50%;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+    }
+
+/* 开关开启时的效果 */
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+
+/* 安全、警告、错误状态样式 */
+.safe, .warning, .error {
+    color: #fff;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: block; /* 强制每个状态信息占用一行 */
+    width: 100%; /* 确保占满容器 */
+    box-sizing: border-box; /* 防止溢出 */
+}
+
+/* 安全状态 */
+.safe {
+    background-color: #4CAF50; /* 绿色背景 */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* 警告状态 */
+.warning {
+    background-color: #FF9800; /* 橙色背景 */
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+}
+
+/* 错误状态 */
+.error {
+    background-color: #F44336; /* 红色背景 */
+    box-shadow: 0 0 10px rgba(244, 67, 54, 0.5);
+}
+
+/* 代码显示样式 */
+code {
+    display: block;
+    background-color: #2d2d2d;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: Consolas, 'Courier New', monospace;
+    color: #ff66cc; /* 霓虹粉色 */
+    font-size: 16px;
+    overflow-wrap: break-word;
+}
+
+/* 加载状态 */
+.loading {
+    font-size: 18px;
+    color: #1E88E5; /* 霓虹蓝，确保加载文字颜色和背景对比强烈 */
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    text-shadow: 0 0 10px #1E88E5, 0 0 20px #1E88E5; /* 加强蓝色的光效 */
+    white-space: nowrap; /* 禁止换行 */
+    overflow: hidden; /* 隐藏超出容器的文字 */
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    .result {
+        font-size: 14px;
+    }
+
+    .safe, .warning, .error {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Website Risk Analyzer",
+    "description": "Automatically analyzes website source code for risks and data leakage",
+    "version": "1.0",
+    "permissions": [
+        "activeTab", // 允许插件访问当前活动标签的 URL
+        "tabs", // 允许插件访问标签页面的信息
+        "http://*/*", // 允许插件访问所有 http 网站
+        "https://*/*" // 允许插件访问所有 https 网站
+    ],
+    "background": {
+        "scripts": [ "background.js" ],
+        "persistent": false // 非持久化背景脚本
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "48": "icons/48.png" // 使用你现有的 48px 图标
+        }
+    },
+    "icons": {
+        "48": "icons/48.png" // 仅配置 48px 图标
+    }
+}
